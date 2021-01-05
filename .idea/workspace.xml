@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e3616a95-e0a5-491e-b32f-0c709495785f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e3616a95-e0a5-491e-b32f-0c709495785f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +193,7 @@
       <workItem from="1609693562457" duration="1375000" />
       <workItem from="1609697936722" duration="4939000" />
       <workItem from="1609829049015" duration="670000" />
+      <workItem from="1609839895566" duration="81000" />
     </task>
     <servers />
   </component>
