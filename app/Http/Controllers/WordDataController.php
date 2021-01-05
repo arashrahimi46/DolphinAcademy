@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imports\WordDataImport;
 use App\Imports\WordsImport;
+use App\Models\Word;
 use App\Models\WordData;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -25,5 +26,12 @@ class WordDataController extends Controller
     {
         $wordData = WordData::create($request->all());
         return response()->json(['status' => 'ok', 'message' => 'word data created successfully']);
+    }
+
+    function postDeleteWordData(Request $request)
+    {
+        $id = $request->input('id');
+        WordData::destroy($id);
+        return response()->json(['status' => 'ok', 'message' => 'word data deleted successfully']);
     }
 }

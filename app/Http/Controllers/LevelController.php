@@ -18,4 +18,11 @@ class LevelController extends Controller
         $level = Level::create($request->all());
         return response()->json(['status' => 'ok', 'message' => 'level created successfully']);
     }
+
+    function postDeleteLevel(Request $request)
+    {
+       $id = $request->input('id');
+       Level::destroy($id);
+       return response()->json(['status' => 'ok', 'message' => 'level deleted successfully']);
+    }
 }

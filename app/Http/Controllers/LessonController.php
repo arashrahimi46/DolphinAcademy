@@ -19,4 +19,11 @@ class LessonController extends Controller
         $lesson = Lesson::create($request->all());
         return response()->json(['status' => 'ok', 'message' => 'lesson created successfully']);
     }
+
+    function postDeleteLesson(Request $request)
+    {
+        $id = $request->input('id');
+        Lesson::destroy($id);
+        return response()->json(['status' => 'ok', 'message' => 'lesson deleted successfully']);
+    }
 }
