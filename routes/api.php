@@ -34,7 +34,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('levels/add' , [LevelController::class , 'postAddLevel']);
     Route::post('lessons/add' , [LessonController::class , 'postAddLesson']);
     Route::post('words/add' , [WordController::class , 'postAddWord']);
-    Route::post('words/add' , [WordController::class , 'postAddWord']);
     Route::post('word_data/add' , [WordDataController::class , 'postAddWordData']);
     Route::post('meanings/add' , [MeaningController::class , 'postAddMeaning']);
     Route::post('sentences/add' , [SentenceController::class , 'postAddSentence']);
