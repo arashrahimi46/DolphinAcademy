@@ -15,9 +15,9 @@ class WordController extends Controller
         Excel::import(new WordsImport($id), $excelFile);
     }
 
-    function getWordsByLessonsId($id)
+    function getWordsByLessonId($id)
     {
-        $words = Word::where('lesson_id', $id)->get();
+        $words = Word::where('lesson_id', $id)->with('wordData')->get();
         return response()->json(['status' => 'ok', 'data' => $words]);
     }
 
