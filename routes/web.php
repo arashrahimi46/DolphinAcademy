@@ -26,9 +26,15 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::post('login', [AdminController::class, 'postAdminLogin']);
+
     Route::post('user/create', [UserController::class, 'createUser']);
 });
 
+Route::post('api/admin/login', [AdminController::class, 'postAdminLogin']);
+
 
 Route::get('api/test', [\App\Http\Controllers\ApiController::class, 'getAllData']);
+
+Route::get('api/unauthorized', function () {
+    return response()->json(['status' => 'failed', 'message' => 'user is not authenticated']);
+})->name('unauthorized');

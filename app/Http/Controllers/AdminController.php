@@ -62,11 +62,17 @@ class AdminController extends Controller
             'password' => $request->input('password'), 'type' => 'admin']);
         if ($auth_result) {
             $user = Auth::user();
-            $user->tokens()->delete();
             $tokenResult = $user->createToken('authToken')->plainTextToken;
             return response()->json(['status' => 'ok', 'message' => 'user logged in successfully', 'token' => $tokenResult]);
         }
         return response()->json(['status' => 'failed', 'message' => 'user name or password is wrong']);
     }
+
+    function postAdminLogout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json(['status' => 'ok', 'message' => 'user logged out successfully']);
+    }
+
 
 }
