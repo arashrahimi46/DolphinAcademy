@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BulkImportRequest;
+use App\Http\Requests\LoginRequest;
 use App\Models\BaseCategory;
 use App\Models\Word;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -51,6 +54,19 @@ class AdminController extends Controller
     function getCategoryMeanings()
     {
 
+    }
+
+    function postAdminLogin(LoginRequest $request)
+    {
+        $auth_result = Auth::attempt(['name' => $request->input('user_name'),
+            'password' => $request->input('password'), 'type' => 'admin']);
+        if ($auth_result) {
+            $user = Auth::user();
+            $user->tokens()->delete();
+            $tokenResult = $user->createToken('authToken')->plainTextToken;
+            return response()->json(['status' => 'ok', 'message' => 'user logged in successfully', 'token' => $tokenResult]);
+        }
+        return response()->json(['status' => 'failed', 'message' => 'user name or password is wrong']);
     }
 
 }

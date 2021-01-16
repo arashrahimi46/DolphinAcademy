@@ -9,6 +9,7 @@ use \App\Http\Controllers\WordDataController;
 use \App\Http\Controllers\SentenceController;
 use \App\Http\Controllers\LessonController;
 use \App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +26,9 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::post('user/create' , [UserController::class , 'createUser']);
+    Route::post('login', [AdminController::class, 'postAdminLogin']);
+    Route::post('user/create', [UserController::class, 'createUser']);
 });
-
 
 
 Route::get('api/test', [\App\Http\Controllers\ApiController::class, 'getAllData']);
