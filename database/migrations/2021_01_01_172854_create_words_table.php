@@ -18,8 +18,8 @@ class CreateWordsTable extends Migration
             $table->string('word')->index();
             $table->string('pronounce');
             $table->integer('type');
-            $table->bigInteger('lesson_id')->unsigned()->index();
-            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+//            $table->bigInteger('lesson_id')->unsigned()->index();
+//            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
             $table->timestamps();
         });
     }

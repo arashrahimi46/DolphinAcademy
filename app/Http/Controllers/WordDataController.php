@@ -11,9 +11,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class WordDataController extends Controller
 {
-    function bulkImport($excelFile, $id)
+    function bulkImport($excelFile)
     {
-        Excel::import(new WordDataImport($id), $excelFile);
+        Excel::import(new WordDataImport(), $excelFile);
     }
 
     function getWordDataByWordId($id)

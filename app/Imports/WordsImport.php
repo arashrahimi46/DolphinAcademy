@@ -3,29 +3,29 @@
 namespace App\Imports;
 
 use App\Models\Word;
+use App\Models\WordLesson;
+use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 
-class WordsImport implements ToModel
+class WordsImport implements ToCollection
 {
-    public $id;
-
-    public function __construct($id)
+    public function collection(Collection $rows)
     {
-        $this->id = $id;
-    }
-
-    /**
-     * @param array $row
-     *
-     * @return \Illuminate\Database\Eloquent\Model|null
-     */
-    public function model(array $row)
-    {
-        return new Word([
-            'lesson_id' => $this->id,
-            'word' => $row[0],
-            'pronounce' => $row[1],
-            'type' => $row[2]
-        ]);
+        foreach ($rows as $row) {
+            $word = new Word();
+            $word->word = $row[0];
+            $word->pronounce = $row[1];
+            $word->type = $row[2];
+            $word->save();
+            $word_id = $word->id;
+            $lessons = explode(",", $row[3]);
+            foreach ($lessons as $lesson) {
+                $wordLesson = new WordLesson();
+                $wordLesson->word_id = $word_id;
+                $wordLesson->lesson_id = $lesson;
+                $wordLesson->save();
+            }
+        }
     }
 }

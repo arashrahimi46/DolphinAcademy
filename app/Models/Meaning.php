@@ -9,12 +9,11 @@ class Meaning extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['meaning', 'synonyms', 'opposites',
-        'word_id'];
+    protected $fillable = ['meaning', 'synonyms', 'opposites'];
 
     public function sentences()
     {
-        return $this->hasMany(Sentence::class);
+        return $this->belongsToMany(Sentence::class, 'meaning_sentences');
     }
 
     public function meaning()

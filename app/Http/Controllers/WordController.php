@@ -10,9 +10,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class WordController extends Controller
 {
-    function bulkImport($excelFile , $id)
+    function bulkImport($excelFile)
     {
-        Excel::import(new WordsImport($id), $excelFile);
+        Excel::import(new WordsImport(), $excelFile);
     }
 
     function getWordsByLessonId($id)

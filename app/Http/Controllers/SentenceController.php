@@ -11,9 +11,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class SentenceController extends Controller
 {
-    function bulkImport($excelFile, $id)
+    function bulkImport($excelFile)
     {
-        Excel::import(new SentencesImport($id), $excelFile);
+        Excel::import(new SentencesImport(), $excelFile);
     }
 
     function getSentencesByMeaningId($id)

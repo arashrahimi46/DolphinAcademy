@@ -18,8 +18,8 @@ class CreateMeaningsTable extends Migration
             $table->text('meaning');
             $table->text('synonyms')->nullable();
             $table->text('opposites')->nullable();
-            $table->bigInteger('word_id')->unsigned()->index();
-            $table->foreign('word_id')->references('id')->on('words')->onDelete('cascade');
+//            $table->bigInteger('word_id')->unsigned()->index();
+//            $table->foreign('word_id')->references('id')->on('words')->onDelete('cascade');
             $table->timestamps();
         });
     }

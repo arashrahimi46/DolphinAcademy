@@ -7,12 +7,6 @@ use Maatwebsite\Excel\Concerns\ToModel;
 
 class WordDataImport implements ToModel
 {
-    public $id;
-
-    public function __construct($id)
-    {
-        $this->id = $id;
-    }
 
 
     /**
@@ -23,7 +17,6 @@ class WordDataImport implements ToModel
     public function model(array $row)
     {
         return new WordData([
-            'word_id' => $this->id,
             'key' => $row[0],
             'value' => $row[1],
         ]);

@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     use HasFactory;
-
     protected $fillable = ['name', 'icon', 'level_id'];
 
     public function words()
     {
-        return $this->hasMany(Word::class);
+        return $this->belongsToMany(Word::class, 'word_lessons');
     }
 
     public function level()

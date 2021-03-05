@@ -20,8 +20,8 @@ class CreateSentencesTable extends Migration
             $table->boolean('is_stared')->default(false);
             $table->text('stared_sentence')->nullable();
             $table->text('star_translate')->nullable();
-            $table->bigInteger('meaning_id')->unsigned()->index();
-            $table->foreign('meaning_id')->references('id')->on('meanings')->onDelete('cascade');
+//            $table->bigInteger('meaning_id')->unsigned()->index();
+//            $table->foreign('meaning_id')->references('id')->on('meanings')->onDelete('cascade');
             $table->timestamps();
         });
     }

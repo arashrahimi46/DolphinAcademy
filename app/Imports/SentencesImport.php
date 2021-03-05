@@ -2,33 +2,31 @@
 
 namespace App\Imports;
 
+use App\Models\MeaningSentence;
 use App\Models\Sentence;
+use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 
-class SentencesImport implements ToModel
+class SentencesImport implements ToCollection
 {
-
-    public $id;
-
-    public function __construct($id)
+    public function collection(Collection $rows)
     {
-        $this->id = $id;
-    }
-
-    /**
-     * @param array $row
-     *
-     * @return \Illuminate\Database\Eloquent\Model|null
-     */
-    public function model(array $row)
-    {
-        return new Sentence([
-            'meaning_id' => $this->id,
-            'sentence' => $row[0],
-            'translate' => $row[1],
-            'is_stared' => $row[2],
-            'stared_sentence' => $row[3],
-            'star_translate' => $row[4],
-        ]);
+        foreach ($rows as $row) {
+            $sentence = new Sentence();
+            $sentence->sentence = $row[0];
+            $sentence->translate = $row[1];
+            $sentence->is_stared = $row[2];
+            $sentence->stared_sentence = $row[3];
+            $sentence->star_translate = $row[4];
+            $sentence->save();
+            $meanings = explode(",", $row[5]);
+            foreach ($meanings as $meaning) {
+                $meaningSentence = new MeaningSentence();
+                $meaningSentence->meaning_id = $meaning;
+                $meaningSentence->sentence_id = $sentence->id;
+                $meaningSentence->save();
+            }
+        }
     }
 }

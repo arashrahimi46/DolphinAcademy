@@ -9,12 +9,13 @@ class Word extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['lesson_id', 'word', 'pronounce', 'type'];
+    protected $fillable = ['word', 'pronounce', 'type'];
 
     public function meanings()
     {
-        return $this->hasMany(Meaning::class);
+        return $this->belongsToMany(Meaning::class, 'word_meanings');
     }
+
 
     public function wordData()
     {

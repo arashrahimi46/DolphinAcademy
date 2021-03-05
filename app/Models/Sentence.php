@@ -10,8 +10,7 @@ class Sentence extends Model
     use HasFactory;
 
     protected $fillable = ['sentence', 'translate',
-        'is_stared', 'stared_sentence', 'star_translate',
-        'meaning_id'];
+        'is_stared', 'stared_sentence', 'star_translate'];
 
     public function meaning()
     {

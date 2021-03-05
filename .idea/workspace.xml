@@ -2,12 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/MeaningSentence.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/WordLesson.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/WordMeaning.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coreFiles.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_05_094226_create_word_lessons_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_05_100027_create_word_meanings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_05_100132_create_meaning_sentences_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/publicFiles.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MeaningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MeaningController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SentenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SentenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WordDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WordDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Imports/MeaningsImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/MeaningsImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Imports/SentencesImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/SentencesImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Imports/WordDataImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/WordDataImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Imports/WordsImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/WordsImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Lesson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Meaning.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Meaning.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sentence.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sentence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Word.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Word.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_01_172854_create_words_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_01_172854_create_words_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_01_172905_create_meanings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_01_172905_create_meanings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_01_172912_create_sentences_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_01_172912_create_sentences_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-AwxwL1N6iMyOyHCD8YGTvgspVoG7LtnI" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,13 +186,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Imports" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Imports" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/database/migrations" />
       <recent name="$PROJECT_DIR$/app/Models" />
@@ -205,6 +228,7 @@
       <workItem from="1610287434425" duration="3022000" />
       <workItem from="1610800572352" duration="3475000" />
       <workItem from="1610821906880" duration="470000" />
+      <workItem from="1614936544899" duration="5630000" />
     </task>
     <servers />
   </component>

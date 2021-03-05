@@ -11,9 +11,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class MeaningController extends Controller
 {
-    function bulkImport($excelFile, $id)
+    function bulkImport($excelFile)
     {
-        Excel::import(new MeaningsImport($id), $excelFile);
+        Excel::import(new MeaningsImport(), $excelFile);
     }
 
     function getMeaningsByWordId($id)

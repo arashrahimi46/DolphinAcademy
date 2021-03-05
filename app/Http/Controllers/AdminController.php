@@ -17,16 +17,16 @@ class AdminController extends Controller
         $type = $request->input('type');
         switch ($type) {
             case 'word':
-                (new WordController)->bulkImport($request->file('excel'), $request->input('id'));
+                (new WordController)->bulkImport($request->file('excel'));
                 break;
             case 'meaning':
-                (new MeaningController())->bulkImport($request->file('excel'), $request->input('id'));
+                (new MeaningController())->bulkImport($request->file('excel'));
                 break;
             case 'sentence':
-                (new SentenceController())->bulkImport($request->file('excel'), $request->input('id'));
+                (new SentenceController())->bulkImport($request->file('excel'));
                 break;
             case 'word_data':
-                (new WordDataController())->bulkImport($request->file('excel'), $request->input('id'));
+                (new WordDataController())->bulkImport($request->file('excel'));
         }
         return response()->json(['status' => 'ok', 'message' => 'data imported successfully']);
     }
