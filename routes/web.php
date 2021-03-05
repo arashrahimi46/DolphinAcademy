@@ -35,6 +35,11 @@ Route::post('api/admin/login', [AdminController::class, 'postAdminLogin']);
 
 Route::get('api/test', [\App\Http\Controllers\ApiController::class, 'getAllData']);
 
+Route::get('clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    // return what you want
+});
+
 Route::get('api/unauthorized', function () {
     return response()->json(['status' => 'failed', 'message' => 'user is not authenticated']);
 })->name('unauthorized');

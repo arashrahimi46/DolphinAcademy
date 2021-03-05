@@ -15,13 +15,13 @@ class WordController extends Controller
         Excel::import(new WordsImport(), $excelFile);
     }
 
-    function getWordsByLessonId($id = null)
+    function getWordsByLessonId($lesson_id = null)
     {
         $words = "";
-        if ($id == null) {
+        if ($lesson_id == null) {
             $words = Word::all(5);
         } else {
-            $words = Lesson::where('id', $id)->with('words')->get();
+            $words = Lesson::where('id', $lesson_id)->with('words')->get();
         }
 
         return response()->json(['status' => 'ok', 'data' => $words]);
