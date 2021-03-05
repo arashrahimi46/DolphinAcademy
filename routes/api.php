@@ -27,10 +27,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('categories', [AdminController::class, 'getAllCategories']);
     Route::get('levels/{category_id}', [LevelController::class, 'getLevelsByCategoryId']);
     Route::get('lessons/{level_id}', [LessonController::class, 'getLessonsByLevelId']);
-    Route::get('words/{lesson_id}', [WordController::class, 'getWordsByLessonId']);
+    Route::get('words/{lesson_id?}', [WordController::class, 'getWordsByLessonId']);
     Route::get('word_data/{word_id}', [WordDataController::class, 'getWordDataByWordId']);
-    Route::get('meanings/{word_id}', [MeaningController::class, 'getMeaningsByWordId']);
-    Route::get('sentences/{meaning_id}', [SentenceController::class, 'getSentencesByMeaningId']);
+    Route::get('meanings/{word_id?}', [MeaningController::class, 'getMeaningsByWordId']);
+    Route::get('sentences/{meaning_id?}', [SentenceController::class, 'getSentencesByMeaningId']);
     Route::post('levels/add', [LevelController::class, 'postAddLevel']);
     Route::post('lessons/add', [LessonController::class, 'postAddLesson']);
     Route::post('words/add', [WordController::class, 'postAddWord']);

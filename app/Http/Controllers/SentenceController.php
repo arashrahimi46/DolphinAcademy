@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imports\SentencesImport;
 use App\Imports\WordsImport;
+use App\Models\Meaning;
 use App\Models\Sentence;
 use App\Models\Word;
 use Illuminate\Http\Request;
@@ -16,9 +17,13 @@ class SentenceController extends Controller
         Excel::import(new SentencesImport(), $excelFile);
     }
 
-    function getSentencesByMeaningId($id)
+    function getSentencesByMeaningId($meaning_id = null)
     {
-        $sentences = Sentence::where('meaning_id', $id)->get();
+        if ($meaning_id == null) {
+            $sentences = Sentence::all();
+        } else {
+            $sentences = Meaning::where('id', $meaning_id)->with('sentences')->get();
+        }
         return response()->json(['status' => 'ok', 'data' => $sentences]);
     }
 

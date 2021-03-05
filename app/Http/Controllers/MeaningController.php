@@ -16,9 +16,13 @@ class MeaningController extends Controller
         Excel::import(new MeaningsImport(), $excelFile);
     }
 
-    function getMeaningsByWordId($id)
+    function getMeaningsByWordId($word_id = null)
     {
-        $meanings = Meaning::where('word_id', $id)->get();
+        if ($word_id == null) {
+            $meanings = Meaning::all();
+        } else {
+            $meanings = Word::where('id', $word_id)->with('meanings')->get();
+        }
         return response()->json(['status' => 'ok', 'data' => $meanings]);
     }
 

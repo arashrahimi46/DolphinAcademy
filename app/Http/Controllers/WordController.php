@@ -15,16 +15,22 @@ class WordController extends Controller
         Excel::import(new WordsImport(), $excelFile);
     }
 
-    function getWordsByLessonId($id)
+    function getWordsByLessonId($id = null)
     {
-        $words = Word::where('lesson_id', $id)->with('wordData')->get();
+        $words = "";
+        if ($id == null) {
+            $words = Word::all(5);
+        } else {
+            $words = Lesson::where('id', $id)->with('words')->get();
+        }
+
         return response()->json(['status' => 'ok', 'data' => $words]);
     }
 
     function postAddWord(Request $request)
     {
         $word = Word::create($request->all());
-        return response()->json(['status' => 'ok' , 'message' => 'word created successfully']);
+        return response()->json(['status' => 'ok', 'message' => 'word created successfully']);
     }
 
     function postDeleteWord(Request $request)
