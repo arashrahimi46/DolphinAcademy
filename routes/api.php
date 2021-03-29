@@ -10,6 +10,7 @@ use \App\Http\Controllers\WordDataController;
 use \App\Http\Controllers\SentenceController;
 use \App\Http\Controllers\LessonController;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\IconController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('word_data/{word_id}', [WordDataController::class, 'getWordDataByWordId']);
     Route::get('meanings/{word_id?}', [MeaningController::class, 'getMeaningsByWordId']);
     Route::get('sentences/{meaning_id?}', [SentenceController::class, 'getSentencesByMeaningId']);
+    Route::get('icons/get', [IconController::class, 'getAll']);
     Route::post('levels/add', [LevelController::class, 'postAddLevel']);
     Route::post('lessons/add', [LessonController::class, 'postAddLesson']);
     Route::post('words/add', [WordController::class, 'postAddWord']);

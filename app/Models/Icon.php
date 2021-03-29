@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WordLesson extends Model
+class Icon extends Model
 {
-    public $timestamps = false;
     use HasFactory;
+
+    public $timestamps = false;
+    public $fillable = ['title', 'url'];
 }

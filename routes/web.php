@@ -2,12 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AdminController;
-use \App\Http\Controllers\WordController;
-use \App\Http\Controllers\LevelController;
-use \App\Http\Controllers\MeaningController;
-use \App\Http\Controllers\WordDataController;
-use \App\Http\Controllers\SentenceController;
-use \App\Http\Controllers\LessonController;
 use \App\Http\Controllers\UserController;
 
 /*

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/IconController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Icon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_29_085135_create_icons_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-BGvHEui2duqhp5dauIsrGQGdzFlK8NQy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MeaningSentence.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MeaningSentence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/WordLesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WordLesson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/WordMeaning.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WordMeaning.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +170,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Imports" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -205,6 +214,11 @@
       <workItem from="1610800572352" duration="3475000" />
       <workItem from="1610821906880" duration="470000" />
       <workItem from="1614936544899" duration="8039000" />
+      <workItem from="1616060086224" duration="1379000" />
+      <workItem from="1616061480738" duration="1667000" />
+      <workItem from="1616917393447" duration="68000" />
+      <workItem from="1616917484994" duration="1605000" />
+      <workItem from="1617007713901" duration="662000" />
     </task>
     <servers />
   </component>
@@ -225,6 +239,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1254" y="490" width="1332" height="1224" key="find.popup" timestamp="1616062454405">
+      <screen x="0" y="62" width="3840" height="2098" />
+    </state>
+    <state x="1254" y="490" width="1332" height="1224" key="find.popup/0.62.3840.2098@0.62.3840.2098" timestamp="1616062454405" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
