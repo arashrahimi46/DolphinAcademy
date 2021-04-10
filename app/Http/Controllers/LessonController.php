@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lesson;
 use App\Models\Level;
+use App\Exports\LessonExport;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
@@ -25,5 +26,10 @@ class LessonController extends Controller
         $id = $request->input('id');
         Lesson::destroy($id);
         return response()->json(['status' => 'ok', 'message' => 'lesson deleted successfully']);
+    }
+
+    public function export() 
+    {
+        return Excel::download(new LessonExport, 'lessons.xlsx');
     }
 }

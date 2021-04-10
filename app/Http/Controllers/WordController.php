@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Imports\WordsImport;
 use App\Models\Lesson;
 use App\Models\Word;
+use App\Exports\WordExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -38,5 +39,10 @@ class WordController extends Controller
         $id = $request->input('id');
         Word::destroy($id);
         return response()->json(['status' => 'ok', 'message' => 'word deleted successfully']);
+    }
+
+    public function export() 
+    {
+        return Excel::download(new WordExport, 'words.xlsx');
     }
 }

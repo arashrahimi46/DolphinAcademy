@@ -46,5 +46,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('meanings/delete', [MeaningController::class, 'postDeleteMeaning']);
     Route::post('sentences/delete', [SentenceController::class, 'postDeleteSentence']);
     Route::post('admin/logout', [AdminController::class, 'postAdminLogout']);
+    Route::get('export/words' , [WordController::class , 'export']);
+    Route::get('export/meanings' , [MeaningController::class , 'export']);
+    Route::get('export/sentences' , [SentenceController::class , 'export']);
+    Route::get('export/lessons' , [LessonController::class , 'export']);
 });
 

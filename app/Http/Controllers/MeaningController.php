@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Imports\MeaningsImport;
 use App\Imports\WordsImport;
 use App\Models\Meaning;
+use App\Exports\MeaningExport;
 use App\Models\Word;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -37,5 +38,10 @@ class MeaningController extends Controller
         $id = $request->input('id');
         Meaning::destroy($id);
         return response()->json(['status' => 'ok', 'message' => 'meaning deleted successfully']);
+    }
+
+    public function export() 
+    {
+        return Excel::download(new MeaningExport, 'meanings.xlsx');
     }
 }

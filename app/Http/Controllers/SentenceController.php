@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imports\SentencesImport;
 use App\Imports\WordsImport;
+use App\Exports\SentenceExport;
 use App\Models\Meaning;
 use App\Models\Sentence;
 use App\Models\Word;
@@ -38,5 +39,10 @@ class SentenceController extends Controller
         $id = $request->input('id');
         Word::destroy($id);
         return response()->json(['status' => 'ok', 'message' => 'sentence deleted successfully']);
+    }
+
+    public function export() 
+    {
+        return Excel::download(new SentenceExport, 'sentences.xlsx');
     }
 }
