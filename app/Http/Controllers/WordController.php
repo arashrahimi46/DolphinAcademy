@@ -36,6 +36,7 @@ class WordController extends Controller
         $wordLesson = new WordLesson();
         $wordLesson->word_id = $word->id;
         $wordLesson->lesson_id = $request->get('lesson_id');
+        $wordLesson->save();
         return response()->json(['status' => 'ok', 'message' => 'word created successfully']);
     }
 
