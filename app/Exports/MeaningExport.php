@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Meaning;
+use App\Models\Meaning;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class MeaningExport implements FromCollection

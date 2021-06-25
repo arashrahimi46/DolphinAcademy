@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WordController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AdminController;
 use \App\Http\Controllers\UserController;
@@ -37,3 +38,5 @@ Route::get('clear-cache', function() {
 Route::get('api/unauthorized', function () {
     return response()->json(['status' => 'failed', 'message' => 'user is not authenticated']);
 })->name('unauthorized');
+
+Route::get('export/words2' , [WordController::class , 'export']);

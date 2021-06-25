@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Sentence;
+use App\Models\Sentence;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class SentenceExport implements FromCollection

@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Word;
+use App\Models\Word;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class WordExport implements FromCollection
