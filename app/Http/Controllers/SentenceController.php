@@ -6,8 +6,10 @@ use App\Imports\SentencesImport;
 use App\Imports\WordsImport;
 use App\Exports\SentenceExport;
 use App\Models\Meaning;
+use App\Models\MeaningSentence;
 use App\Models\Sentence;
 use App\Models\Word;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -31,6 +33,10 @@ class SentenceController extends Controller
     function postAddSentence(Request $request)
     {
         $sentence = Sentence::create($request->all());
+        $meaningSentence = new MeaningSentence();
+        $meaningSentence->meaning_id = $request->get('meaning_id');
+        $meaningSentence->sentence_id = $sentence->id;
+        $meaningSentence->save();
         return response()->json(['status' => 'ok', 'message' => 'sentence created successfully']);
     }
 
@@ -41,7 +47,7 @@ class SentenceController extends Controller
         return response()->json(['status' => 'ok', 'message' => 'sentence deleted successfully']);
     }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new SentenceExport, 'sentences.xlsx');
     }

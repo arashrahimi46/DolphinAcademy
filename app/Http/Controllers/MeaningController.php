@@ -7,6 +7,8 @@ use App\Imports\WordsImport;
 use App\Models\Meaning;
 use App\Exports\MeaningExport;
 use App\Models\Word;
+use App\Models\WordMeaning;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -30,6 +32,10 @@ class MeaningController extends Controller
     function postAddMeaning(Request $request)
     {
         $meaning = Meaning::create($request->all());
+        $wordMeaning = new WordMeaning();
+        $wordMeaning->word_id = $request->get('word_id');
+        $wordMeaning->meaning_id = $meaning->id;
+        $wordMeaning->save();
         return response()->json(['status' => 'ok', 'message' => 'meaning created successfully']);
     }
 
@@ -40,7 +46,7 @@ class MeaningController extends Controller
         return response()->json(['status' => 'ok', 'message' => 'meaning deleted successfully']);
     }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new MeaningExport, 'meanings.xlsx');
     }

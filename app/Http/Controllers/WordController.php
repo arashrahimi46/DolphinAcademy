@@ -6,6 +6,8 @@ use App\Imports\WordsImport;
 use App\Models\Lesson;
 use App\Models\Word;
 use App\Exports\WordExport;
+use App\Models\WordLesson;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -31,6 +33,9 @@ class WordController extends Controller
     function postAddWord(Request $request)
     {
         $word = Word::create($request->all());
+        $wordLesson = new WordLesson();
+        $wordLesson->word_id = $word->id;
+        $wordLesson->lesson_id = $request->get('lesson_id');
         return response()->json(['status' => 'ok', 'message' => 'word created successfully']);
     }
 
@@ -49,7 +54,10 @@ class WordController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
+        if ($query == "" || $query == null) {
+            return response()->json(['status' => 'failed', 'message' => 'query can not be empty']);
+        }
         $result = Word::where('word', 'like', "%$query%")->get();
-        return $result;
+        return response()->json(['status' => 'ok', 'data' => $result]);
     }
 }
