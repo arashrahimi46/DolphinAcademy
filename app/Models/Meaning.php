@@ -16,8 +16,8 @@ class Meaning extends Model
         return $this->belongsToMany(Sentence::class, 'meaning_sentences');
     }
 
-    public function meaning()
+    public function words()
     {
-        return $this->belongsTo(Meaning::class);
+        return $this->belongsToMany(Word::class, 'word_meanings');
     }
 }

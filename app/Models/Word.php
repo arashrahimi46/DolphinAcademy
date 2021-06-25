@@ -22,8 +22,8 @@ class Word extends Model
         return $this->hasMany(WordData::class);
     }
 
-    public function lesson()
+    public function lessons()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsToMany(Lesson::class, 'word_lessons');
     }
 }

@@ -14,6 +14,6 @@ class Sentence extends Model
 
     public function meaning()
     {
-        return $this->belongsTo(Meaning::class);
+        return $this->belongsToMany(Meaning::class, 'meaning_sentences');
     }
 }
