@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/CategoryExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/CategoryExport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/LessonExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/LessonExport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/MeaningExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/MeaningExport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/SentenceExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/SentenceExport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/WordExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/WordExport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -235,12 +239,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1254" y="490" width="1332" height="1224" key="find.popup" timestamp="1616062454405">
-      <screen x="0" y="62" width="3840" height="2098" />
-    </state>
-    <state x="1254" y="490" width="1332" height="1224" key="find.popup/0.62.3840.2098@0.62.3840.2098" timestamp="1616062454405" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

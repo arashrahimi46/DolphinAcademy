@@ -41,8 +41,15 @@ class WordController extends Controller
         return response()->json(['status' => 'ok', 'message' => 'word deleted successfully']);
     }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new WordExport, 'words.xlsx');
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $result = Word::where('word', 'like', "%$query%")->get();
+        return $result;
     }
 }
