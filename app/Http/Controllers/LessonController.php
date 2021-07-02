@@ -6,6 +6,7 @@ use App\Models\Lesson;
 use App\Models\Level;
 use App\Exports\LessonExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LessonController extends Controller
 {
@@ -28,7 +29,7 @@ class LessonController extends Controller
         return response()->json(['status' => 'ok', 'message' => 'lesson deleted successfully']);
     }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new LessonExport, 'lessons.xlsx');
     }
