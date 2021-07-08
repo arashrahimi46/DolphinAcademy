@@ -28,14 +28,16 @@ Route::prefix('admin')->group(function () {
 
 Route::post('api/admin/login', [AdminController::class, 'postAdminLogin']);
 
-Route::post('api/user/login' , [UserController::class , 'postUserLogin']);
-Route::post('api/user/signup' , [UserController::class , 'createUser']);
+Route::post('api/user/login', [UserController::class, 'postUserLogin']);
+Route::post('api/user/signup', [UserController::class, 'createUser']);
 
+Route::get('auth/google', [\App\Http\Controllers\GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [\App\Http\Controllers\GoogleController::class, 'handleGoogleCallback']);
 
 
 Route::get('api/test', [\App\Http\Controllers\ApiController::class, 'getAllData']);
 
-Route::get('clear-cache', function() {
+Route::get('clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');
     // return what you want
 });
@@ -44,4 +46,4 @@ Route::get('api/unauthorized', function () {
     return response()->json(['status' => 'failed', 'message' => 'user is not authenticated']);
 })->name('unauthorized');
 
-Route::get('export/words2' , [WordController::class , 'export']);
+Route::get('export/words2', [WordController::class, 'export']);
