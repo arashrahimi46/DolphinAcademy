@@ -47,6 +47,6 @@ class GoogleController extends Controller
             $tokenResult = $newuser->createToken('authToken')->plainTextToken;
             Auth::login($newUser);
         }
-        return $tokenResult;
+        return response()->json(['status' => 'ok', 'message' => 'user logged in successfully', 'user' => $user, 'token' => $tokenResult]);
     }
 }

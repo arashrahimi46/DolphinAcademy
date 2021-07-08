@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/GoogleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_07_08_101058_add_google_id_column.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dolphin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dolphin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GoogleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GoogleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coreFiles.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +230,7 @@
       <workItem from="1625722404292" duration="644000" />
       <workItem from="1625736299987" duration="805000" />
       <workItem from="1625738242327" duration="7000" />
-      <workItem from="1625738273655" duration="2306000" />
+      <workItem from="1625738273655" duration="5069000" />
     </task>
     <servers />
   </component>
