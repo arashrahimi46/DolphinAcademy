@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WordController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AdminController;
 use \App\Http\Controllers\UserController;
@@ -26,6 +27,10 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::post('api/admin/login', [AdminController::class, 'postAdminLogin']);
+
+Route::post('api/user/login' , [UserController::class , 'postUserLogin']);
+Route::post('api/user/signup' , [UserController::class , 'createUser']);
+
 
 
 Route::get('api/test', [\App\Http\Controllers\ApiController::class, 'getAllData']);
