@@ -11,10 +11,18 @@ class UserController extends Controller
 {
     function createUser(Request $request)
     {
+        $password_confirm = $request['password_confirm'];
+        $password = $request['password'];
+        if ($password_confirm != $password) {
+            return response()->json([
+                "status" => 'failed',
+                "message" => "password and confirmation is not same",
+            ]);
+        }
         $user = new User();
         $user->name = $request['name'];
         $user->email = $request['email'];
-        $user->password = $request['password'];
+        $user->password = bcrypt($request['password']);
         $user->save();
         $tokenResult = $user->createToken('authToken')->plainTextToken;
         return response()->json([
