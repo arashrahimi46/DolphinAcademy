@@ -15,5 +15,8 @@ class VerifyCsrfToken extends Middleware
         'admin/data/import/bulk',
         'admin/user/create',
         'api/admin/login',
+        'api/user/login',
+        'api/user/signup',
+
     ];
 }

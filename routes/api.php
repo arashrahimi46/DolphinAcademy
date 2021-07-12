@@ -23,7 +23,7 @@ use \App\Http\Controllers\IconController;
 |
 */
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('data/import/bulk', [AdminController::class, 'postAdminBulkImport']);
     Route::get('categories', [AdminController::class, 'getAllCategories']);
     Route::get('levels/{category_id}', [LevelController::class, 'getLevelsByCategoryId']);
@@ -46,10 +46,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('meanings/delete', [MeaningController::class, 'postDeleteMeaning']);
     Route::post('sentences/delete', [SentenceController::class, 'postDeleteSentence']);
     Route::post('admin/logout', [AdminController::class, 'postAdminLogout']);
-    Route::get('export/words' , [WordController::class , 'export']);
-    Route::get('export/meanings' , [MeaningController::class , 'export']);
-    Route::get('export/sentences' , [SentenceController::class , 'export']);
-    Route::get('export/lessons' , [LessonController::class , 'export']);
-    Route::post('search/words' , [WordController::class , 'search']);
+    Route::get('export/words', [WordController::class, 'export']);
+    Route::get('export/meanings', [MeaningController::class, 'export']);
+    Route::get('export/sentences', [SentenceController::class, 'export']);
+    Route::get('export/lessons', [LessonController::class, 'export']);
+    Route::post('search/words', [WordController::class, 'search']);
 });
 

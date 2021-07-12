@@ -22,7 +22,7 @@ class WordController extends Controller
     {
         $words = "";
         if ($lesson_id == null) {
-            $words = Word::all(5);
+            $words = Word::all();
         } else {
             $words = Lesson::where('id', $lesson_id)->with('words')->get();
         }

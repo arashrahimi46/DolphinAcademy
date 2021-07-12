@@ -19,6 +19,22 @@ class UserController extends Controller
                 "message" => "password and confirmation is not same",
             ]);
         }
+        if (isset($request['email'])) {
+            $checkRepeatedEmail = User::where('email', $request['email'])->count();
+            if ($checkRepeatedEmail > 0) {
+                return response()->json([
+                    "status" => 'failed',
+                    "message" => "this email already registered",
+                ]);
+            }
+        } else {
+            return response()->json([
+                "status" => 'failed',
+                "message" => "email is required",
+            ]);
+        }
+
+
         $user = new User();
         $user->name = $request['user_name'];
         $user->email = $request['email'];
@@ -26,6 +42,7 @@ class UserController extends Controller
         $user->save();
         $tokenResult = $user->createToken('authToken')->plainTextToken;
         return response()->json([
+            "user" => $user,
             "status" => 'ok',
             "access_token" => $tokenResult,
             "token_type" => 'Bearer',
@@ -34,13 +51,14 @@ class UserController extends Controller
 
     function postUserLogin(LoginRequest $request)
     {
-        $auth_result = Auth::attempt(['name' => $request->input('user_name'),
+        $auth_result = Auth::attempt(['email' => $request->input('email'),
             'password' => $request->input('password'), 'type' => 'user']);
         if ($auth_result) {
             $user = Auth::user();
             $tokenResult = $user->createToken('authToken')->plainTextToken;
-            return response()->json(['status' => 'ok', 'message' => 'user logged in successfully', 'token' => $tokenResult]);
+            return response()->json(['status' => 'ok', 'message' => 'user logged in successfully', $user => $user,
+                'access_token' => $tokenResult]);
         }
-        return response()->json(['status' => 'failed', 'message' => 'user name or password is wrong']);
+        return response()->json(['status' => 'failed', 'message' => 'email or password is wrong']);
     }
 }
