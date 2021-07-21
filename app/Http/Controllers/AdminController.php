@@ -56,7 +56,7 @@ class AdminController extends Controller
 
     }
 
-    function postAdminLogin(LoginRequest $request)
+    function postAdminLogin(Request $request)
     {
         $auth_result = Auth::attempt(['name' => $request->input('user_name'),
             'password' => $request->input('password'), 'type' => 'admin']);

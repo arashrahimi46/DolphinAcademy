@@ -14,8 +14,17 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/dadsfdsfsdfsdfs');
 
+        $response->dumpHeaders();
+
+        $response->dumpSession();
+
+        $response->dump();
         $response->assertStatus(200);
+    }
+    public function testMyFirstApp()
+    {
+        $this->assertTrue(true);
     }
 }

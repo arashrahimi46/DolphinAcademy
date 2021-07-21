@@ -34,6 +34,9 @@ Route::post('api/user/signup', [UserController::class, 'createUser']);
 Route::get('auth/google', [\App\Http\Controllers\GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [\App\Http\Controllers\GoogleController::class, 'handleGoogleCallback']);
 
+Route::get('dadsfdsfsdfsdfs', function (){
+    return "hello";
+});
 
 Route::get('api/test', [\App\Http\Controllers\ApiController::class, 'getAllData']);
 

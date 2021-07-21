@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LoginRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ap_sync201Dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ap_sync201Pro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ap_sync206Dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ap_sync206Pro.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/sync2012sp_dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/UserTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dolphin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dolphin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sync201sp_dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sync201sp_dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +170,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
       <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/brianium/paratest" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mU0U1DyBbVez4YILOklpZApaoH" />
@@ -235,7 +252,18 @@
       <workItem from="1625998167598" duration="1564000" />
       <workItem from="1626011527971" duration="666000" />
       <workItem from="1626019170329" duration="31000" />
-      <workItem from="1626092235478" duration="754000" />
+      <workItem from="1626092235478" duration="1459000" />
+      <workItem from="1626099728343" duration="23000" />
+      <workItem from="1626166537753" duration="798000" />
+      <workItem from="1626173575990" duration="4171000" />
+      <workItem from="1626254037114" duration="957000" />
+      <workItem from="1626351857389" duration="469000" />
+      <workItem from="1626532601913" duration="3333000" />
+      <workItem from="1626590112801" duration="2550000" />
+      <workItem from="1626597660254" duration="1841000" />
+      <workItem from="1626774435961" duration="1492000" />
+      <workItem from="1626792219950" duration="10000" />
+      <workItem from="1626897392417" duration="41000" />
     </task>
     <servers />
   </component>

@@ -71,9 +71,6 @@ function getCardEnabled(jsonObject) {
     if (e.op == 239 && e.cfw == true){
         return false
     }
-    if (e.op == 209){
-        return true
-    }
     return true;
 } /*-----*/
 function isCardHolderNameVisible(jsonObject) {
@@ -85,11 +82,10 @@ function isCardHolderNameVisible(jsonObject) {
 } /*-----*/
 function getPayLaterEnabled(jsonObject) {
     var e = JSON.parse(jsonObject);
-    var n = [245, 8000 , 209 , 227];
-    for (i = 0; i < n.length; i++)
-        if (n[i] == e.op) return !0;
     if (e.am < 1000) {
         return false;
     }
+    for (i = 0; i < n.length; i++)
+        if (n[i] == e.op) return !0;
     return false;
 }

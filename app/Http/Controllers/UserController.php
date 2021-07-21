@@ -56,7 +56,7 @@ class UserController extends Controller
         if ($auth_result) {
             $user = Auth::user();
             $tokenResult = $user->createToken('authToken')->plainTextToken;
-            return response()->json(['status' => 'ok', 'message' => 'user logged in successfully', $user => $user,
+            return response()->json(['status' => 'ok', 'message' => 'user logged in successfully', "user" => $user,
                 'access_token' => $tokenResult]);
         }
         return response()->json(['status' => 'failed', 'message' => 'email or password is wrong']);
