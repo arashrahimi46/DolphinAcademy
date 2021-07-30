@@ -38,7 +38,6 @@ Route::get('dadsfdsfsdfsdfs', function (){
     return "hello";
 });
 
-Route::get('api/test', [\App\Http\Controllers\ApiController::class, 'getAllData']);
 
 Route::get('clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');

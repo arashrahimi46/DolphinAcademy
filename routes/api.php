@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AdminController;
@@ -51,5 +52,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('export/sentences', [SentenceController::class, 'export']);
     Route::get('export/lessons', [LessonController::class, 'export']);
     Route::post('search/words', [WordController::class, 'search']);
+    Route::get('get/data', [ApiController::class, 'getAllData']);
+
 });
 
