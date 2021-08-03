@@ -17,7 +17,8 @@ class CreateWordsTable extends Migration
             $table->id();
             $table->string('word')->index();
             $table->string('pronounce');
-            $table->integer('type');
+            $table->text('type')->nullable();
+            $table->text('description')->nullable();
 //            $table->bigInteger('lesson_id')->unsigned()->index();
 //            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
             $table->timestamps();
