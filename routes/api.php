@@ -27,6 +27,7 @@ use \App\Http\Controllers\IconController;
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('data/import/bulk', [AdminController::class, 'postAdminBulkImport']);
     Route::get('categories', [AdminController::class, 'getAllCategories']);
+    Route::post('category/add' , [AdminController::class , 'addCategory']);
     Route::get('levels/{category_id}', [LevelController::class, 'getLevelsByCategoryId']);
     Route::get('lessons/{level_id}', [LessonController::class, 'getLessonsByLevelId']);
     Route::get('words/{lesson_id?}', [WordController::class, 'getWordsByLessonId']);

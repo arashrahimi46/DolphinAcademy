@@ -39,6 +39,20 @@ class AdminController extends Controller
             ->json(['status' => 'ok', 'categories' => $categories]);
     }
 
+    function addCategory(Request $request){
+        $name= $request['name'];
+        $parent_id = $request['parent_id'];
+        $icon = $request['icon'];
+        $category = new Category();
+        $category->name = $name;
+        $category->icon = $icon;
+        $category->parent_id = $parent_id;
+        $category->save();
+        return response()
+            ->json(['status' => 'ok','message' => 'successfully created category' , 'category' => $category]);
+    }
+
+
     function getCategoryWords($category_id, $serie = null)
     {
         $limit = 30;

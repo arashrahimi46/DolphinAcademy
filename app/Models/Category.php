@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-
+    protected $table = "categories";
     public function parent() {
         return $this->belongsTo('App\Category', 'parent_id');
     }
