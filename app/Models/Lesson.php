@@ -14,9 +14,4 @@ class Lesson extends Model
     {
         return $this->belongsToMany(Word::class, 'word_lessons');
     }
-
-    public function level()
-    {
-        return $this->belongsTo(Level::class);
-    }
 }

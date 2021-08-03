@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BulkImportRequest;
 use App\Http\Requests\LoginRequest;
-use App\Models\BaseCategory;
+use App\Models\Category;
 use App\Models\Word;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +34,7 @@ class AdminController extends Controller
 
     function getAllCategories()
     {
-        $categories = BaseCategory::all();
+        $categories = Category::all();
         return response()
             ->json(['status' => 'ok', 'categories' => $categories]);
     }

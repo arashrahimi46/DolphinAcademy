@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\BaseCategory;
+use App\Models\Category;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class CategoryExport implements FromCollection
@@ -12,6 +12,6 @@ class CategoryExport implements FromCollection
      */
     public function collection()
     {
-        return BaseCategory::all();
+        return Category::all();
     }
 }
