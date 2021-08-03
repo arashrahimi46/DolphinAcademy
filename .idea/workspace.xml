@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_01_172854_create_words_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_01_172854_create_words_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_01_172905_create_meanings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_01_172905_create_meanings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_03_191446_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_03_191446_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LessonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LessonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LevelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LevelController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +254,7 @@
       <workItem from="1627671034675" duration="2957000" />
       <workItem from="1627674202254" duration="1424000" />
       <workItem from="1627710325884" duration="34000" />
-      <workItem from="1628017742477" duration="2058000" />
+      <workItem from="1628017742477" duration="3854000" />
     </task>
     <servers />
   </component>

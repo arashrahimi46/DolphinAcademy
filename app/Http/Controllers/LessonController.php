@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Lesson;
 use App\Models\Level;
 use App\Exports\LessonExport;
@@ -12,20 +13,24 @@ class LessonController extends Controller
 {
     function getLessonsByLevelId($id)
     {
-        $lessons = Lesson::where('level_id', $id)->get();
+        $lessons = Category::where('parent_id', $id)->get();
         return response()->json(['status' => 'ok', 'data' => $lessons]);
     }
 
     function postAddLesson(Request $request)
     {
-        $lesson = Lesson::create($request->all());
+        $category = new Category();
+        $category->name = $request['name'];
+        $category->icon = $request['icon'];
+        $category->parent_id = $request['level_id'];
+        $category->save();
         return response()->json(['status' => 'ok', 'message' => 'lesson created successfully']);
     }
 
     function postDeleteLesson(Request $request)
     {
         $id = $request->input('id');
-        Lesson::destroy($id);
+        Category::destroy($id);
         return response()->json(['status' => 'ok', 'message' => 'lesson deleted successfully']);
     }
 
