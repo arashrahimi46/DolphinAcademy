@@ -25,7 +25,7 @@ class LevelController extends Controller
         $category = new Category();
         $category->name = $request['name'];
         $category->icon = $request['icon'];
-        $category->parent_id = $request['level_id'];
+        $category->parent_id = $request['parent_id'];
         $category->save();
         return response()->json(['status' => 'ok', 'message' => 'level created successfully']);
     }

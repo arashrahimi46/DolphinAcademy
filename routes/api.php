@@ -35,8 +35,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('meanings/{word_id?}', [MeaningController::class, 'getMeaningsByWordId']);
     Route::get('sentences/{meaning_id?}', [SentenceController::class, 'getSentencesByMeaningId']);
     Route::get('icons/get', [IconController::class, 'getAll']);
-    Route::post('levels/add', [LevelController::class, 'postAddLevel']);
-    Route::post('lessons/add', [LessonController::class, 'postAddLesson']);
+    Route::post('levels/add', [AdminController::class, 'addCategory']);
+    Route::post('lessons/add', [AdminController::class, 'addCategory']);
     Route::post('words/add', [WordController::class, 'postAddWord']);
     Route::post('word_data/add', [WordDataController::class, 'postAddWordData']);
     Route::post('meanings/add', [MeaningController::class, 'postAddMeaning']);
