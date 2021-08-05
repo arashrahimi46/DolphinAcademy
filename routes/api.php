@@ -28,8 +28,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('data/import/bulk', [AdminController::class, 'postAdminBulkImport']);
     Route::get('categories', [AdminController::class, 'getAllCategories']);
     Route::post('category/add' , [AdminController::class , 'addCategory']);
-    Route::get('levels/{category_id}', [LevelController::class, 'getLevelsByCategoryId']);
-    Route::get('lessons/{level_id}', [LessonController::class, 'getLessonsByLevelId']);
+    Route::get('levels/{category_id}', [AdminController::class, 'getCategoryData']);
+    Route::get('lessons/{level_id}', [AdminController::class, 'getCategoryData']);
     Route::get('words/{lesson_id?}', [WordController::class, 'getWordsByLessonId']);
     Route::get('word_data/{word_id}', [WordDataController::class, 'getWordDataByWordId']);
     Route::get('meanings/{word_id?}', [MeaningController::class, 'getMeaningsByWordId']);

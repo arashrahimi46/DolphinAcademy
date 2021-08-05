@@ -31,6 +31,15 @@ class AdminController extends Controller
         return response()->json(['status' => 'ok', 'message' => 'data imported successfully']);
     }
 
+    function getCategoryData($id){
+        $levels = Category::where('parent_id', $id)->get();
+        $words = Category::where('id' , $id)->with('words')->first();
+        $result = ["categories" => $levels , "words" => []];
+        if ($words) {
+            $result["words"] = $words->words;
+        }
+        return response()->json(['status' => 'ok', 'data' => $result]);
+     }
 
     function getAllCategories()
     {
