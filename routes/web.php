@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\WordController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -34,9 +35,6 @@ Route::post('api/user/signup', [UserController::class, 'createUser']);
 Route::get('auth/google', [\App\Http\Controllers\GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [\App\Http\Controllers\GoogleController::class, 'handleGoogleCallback']);
 
-Route::get('dadsfdsfsdfsdfs', function (){
-    return "hello";
-});
 
 
 Route::get('clear-cache', function () {
@@ -47,5 +45,9 @@ Route::get('clear-cache', function () {
 Route::get('api/unauthorized', function () {
     return response()->json(['status' => 'failed', 'message' => 'user is not authenticated']);
 })->name('unauthorized');
+
+
+Route::get('get/data', [ApiController::class, 'getAllData']);
+Route::get('get/data/seperated', [ApiController::class, 'getAllDataSeperated']);
 
 Route::get('export/words2', [WordController::class, 'export']);

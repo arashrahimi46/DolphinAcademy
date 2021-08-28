@@ -53,7 +53,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('export/sentences', [SentenceController::class, 'export']);
     Route::get('export/lessons', [LessonController::class, 'export']);
     Route::post('search/words', [WordController::class, 'search']);
-    Route::get('get/data', [ApiController::class, 'getAllData']);
+
 
 });
 
