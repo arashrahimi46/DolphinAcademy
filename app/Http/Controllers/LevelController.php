@@ -12,7 +12,12 @@ class LevelController extends Controller
     function getLevelsByCategoryId($id)
     {
         $levels = Category::where('parent_id', $id)->get();
-        return response()->json(['status' => 'ok', 'data' => $levels]);
+        $words = Category::where('id' , $id)->with('words')->first();
+        $result = ["categories" => $levels , "words" => []];
+        if ($words) {
+            $result["words"] = $words->words;
+        }
+        return response()->json(['status' => 'ok', 'data' => $result]);
     }
 
     function postAddLevel(Request $request)
@@ -20,7 +25,7 @@ class LevelController extends Controller
         $category = new Category();
         $category->name = $request['name'];
         $category->icon = $request['icon'];
-        $category->parent_id = $request['level_id'];
+        $category->parent_id = $request['parent_id'];
         $category->save();
         return response()->json(['status' => 'ok', 'message' => 'level created successfully']);
     }

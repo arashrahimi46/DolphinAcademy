@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LevelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LevelController.php" afterDir="false" />
+>>>>>>> 704d63eb7ba5d78f9797a54994e24529d01b7a10
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +161,7 @@
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mU0U1DyBbVez4YILOklpZApaoH" />
