@@ -47,7 +47,7 @@ Route::get('api/unauthorized', function () {
 })->name('unauthorized');
 
 
-Route::get('get/data', [ApiController::class, 'getAllData']);
-Route::get('get/data/seperated', [ApiController::class, 'getAllDataSeperated']);
+Route::get('api/get/data', [ApiController::class, 'getAllData']);
+Route::get('api/get/data/seperated', [ApiController::class, 'getAllDataSeperated']);
 
 Route::get('export/words2', [WordController::class, 'export']);
