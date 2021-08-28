@@ -9,8 +9,8 @@ class ApiController extends Controller
 {
     function getAllData()
     {
-        $allData = Category::with(['levels', 'levels.lessons', 'levels.lessons.words'
-            , 'levels.lessons.words.meanings', 'levels.lessons.words.wordData', 'levels.lessons.words.meanings.sentences'])->get();
+        $allData = Category::with(['words'
+            , 'words.meanings', 'words.meanings.sentences'])->get();
 
         return response()->json(['status' => 'ok', 'data' => $allData]);
     }

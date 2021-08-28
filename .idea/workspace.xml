@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c402f0fc-dc9f-49fc-a7fb-b868baddc213" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_05_094226_create_word_lessons_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_05_094226_create_word_lessons_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +175,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -252,7 +253,10 @@
       <workItem from="1627671034675" duration="2957000" />
       <workItem from="1627674202254" duration="1424000" />
       <workItem from="1627710325884" duration="34000" />
-      <workItem from="1628017742477" duration="4188000" />
+      <workItem from="1628017742477" duration="4373000" />
+      <workItem from="1628088375856" duration="53000" />
+      <workItem from="1628332989771" duration="829000" />
+      <workItem from="1628408980776" duration="280000" />
     </task>
     <servers />
   </component>
