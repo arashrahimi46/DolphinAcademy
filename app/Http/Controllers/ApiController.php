@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Meaning;
 use App\Models\MeaningSentence;
 use App\Models\Sentence;
+use App\Models\Sync;
 use App\Models\Word;
 use App\Models\WordLesson;
 use App\Models\WordMeaning;
@@ -32,5 +33,10 @@ class ApiController extends Controller
         return response()->json(['status' => 'ok', 'data' => ["categories" => $categories , 'words' => $words ,
             'meanings' => $meanings , 'sentences' => $sentences , 'wordLessons' => $wordLessons ,
             'wordMeanings' => $wordMeanings , 'meaningSentences' => $meaningSentences]]);
+    }
+
+    function getVersion(){
+        $sync = Sync::find(1);
+        return response()->json(['status' => 'ok' , 'data' => ['version' => $sync->version]]);
     }
 }
