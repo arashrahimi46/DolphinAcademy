@@ -16,7 +16,7 @@ CreateSyncsTable extends Migration
     {
         Schema::create('syncs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('version');
+            $table->bigInteger('version')->default(0);
         });
     }
 
