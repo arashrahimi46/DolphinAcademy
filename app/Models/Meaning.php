@@ -9,7 +9,7 @@ class Meaning extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['meaning', 'synonyms', 'opposites'];
+    protected $fillable = ['meaning', 'synonyms', 'opposites' , 'type' , 'description'];
 
     public function sentences()
     {
