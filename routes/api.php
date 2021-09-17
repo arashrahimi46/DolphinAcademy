@@ -56,6 +56,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('words/edit', [WordController::class, 'postEditWord']);
     Route::post('category/edit', [AdminController::class, 'postEditCategory']);
     Route::post('sentence/edit', [SentenceController::class, 'postEditSentence']);
-    Route::post('sentence/edit', [MeaningController::class, 'postEditMeaning']);
+    Route::post('meaning/edit', [MeaningController::class, 'postEditMeaning']);
 });
 
