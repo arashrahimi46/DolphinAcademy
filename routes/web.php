@@ -51,4 +51,5 @@ Route::get('api/get/data', [ApiController::class, 'getAllData']);
 Route::get('api/get/data/seperated', [ApiController::class, 'getAllDataSeperated']);
 Route::get('api/get/sync', [ApiController::class, 'getVersion']);
 
-Route::get('export/words2', [WordController::class, 'export']);
+
+

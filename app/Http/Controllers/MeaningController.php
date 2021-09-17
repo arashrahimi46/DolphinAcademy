@@ -50,4 +50,17 @@ class MeaningController extends Controller
     {
         return Excel::download(new MeaningExport, 'meanings.xlsx');
     }
+
+
+    public function postEditMeaning(Request $request)
+    {
+        $meaning = Meaning::query()->find($request['id']);
+        $meaning->meaning = $request['meaning'];
+        $meaning->synonyms = $request['synonyms'];
+        $meaning->opposites = $request['opposites'];
+        $meaning->type = $request['type'];
+        $meaning->description = $request['description'];
+        $meaning->save();
+        return response()->json(['status' => 'ok', 'message' => 'meaning updated successfully']);
+    }
 }

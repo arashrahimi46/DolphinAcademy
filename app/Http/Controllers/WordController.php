@@ -61,4 +61,13 @@ class WordController extends Controller
         $result = Word::where('word', 'like', "%$query%")->get();
         return response()->json(['status' => 'ok', 'data' => $result]);
     }
+
+    public function postEditWord(Request $request){
+        $word = Word::query()->find($request['id']);
+        $word->word = $request['word'];
+        $word->pronounce = $request['pronounce'];
+        $word->description = $request['description'];
+        $word->save();
+        return response()->json(['status' => 'ok', 'message' => 'word updated successfully']);
+    }
 }

@@ -31,15 +31,16 @@ class AdminController extends Controller
         return response()->json(['status' => 'ok', 'message' => 'data imported successfully']);
     }
 
-    function getCategoryData($id){
+    function getCategoryData($id)
+    {
         $levels = Category::where('parent_id', $id)->get();
-        $words = Category::where('id' , $id)->with('words')->first();
-        $result = ["categories" => $levels , "words" => []];
+        $words = Category::where('id', $id)->with('words')->first();
+        $result = ["categories" => $levels, "words" => []];
         if ($words) {
             $result["words"] = $words->words;
         }
         return response()->json(['status' => 'ok', 'data' => $result]);
-     }
+    }
 
     function getAllCategories()
     {
@@ -48,8 +49,9 @@ class AdminController extends Controller
             ->json(['status' => 'ok', 'categories' => $categories]);
     }
 
-    function addCategory(Request $request){
-        $name= $request['name'];
+    function addCategory(Request $request)
+    {
+        $name = $request['name'];
         $parent_id = $request['parent_id'];
         $icon = $request['icon'];
         $category = new Category();
@@ -58,7 +60,7 @@ class AdminController extends Controller
         $category->parent_id = $parent_id;
         $category->save();
         return response()
-            ->json(['status' => 'ok','message' => 'successfully created category' , 'category' => $category]);
+            ->json(['status' => 'ok', 'message' => 'successfully created category', 'category' => $category]);
     }
 
 
@@ -95,6 +97,17 @@ class AdminController extends Controller
     {
         $request->user()->currentAccessToken()->delete();
         return response()->json(['status' => 'ok', 'message' => 'user logged out successfully']);
+    }
+
+    function postEditCategory(Request $request)
+    {
+        $category = Category::query()->find($request['id']);
+        $category->name = $request['name'];
+        $category->icon = $request['icon'];
+        $category->color = $request['color'];
+        $category->parent_id = $request['parent_id'];
+        $category->save();
+        return response()->json(['status' => 'ok', 'message' => 'category updated successfully']);
     }
 
 

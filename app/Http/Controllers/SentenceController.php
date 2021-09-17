@@ -51,4 +51,16 @@ class SentenceController extends Controller
     {
         return Excel::download(new SentenceExport, 'sentences.xlsx');
     }
+
+    public function postEditSentence(Request $request)
+    {
+        $sentence = Sentence::query()->find($request['id']);
+        $sentence->sentence = $request['sentence'];
+        $sentence->translate = $request['translate'];
+        $sentence->is_stared = $request['is_stared'];
+        $sentence->stared_sentence = $request['stared_sentence'];
+        $sentence->star_translate = $request['star_translate'];
+        $sentence->save();
+        return response()->json(['status' => 'ok', 'message' => 'sentence updated successfully']);
+    }
 }

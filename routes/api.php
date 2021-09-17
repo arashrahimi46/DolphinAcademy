@@ -27,7 +27,7 @@ use \App\Http\Controllers\IconController;
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('data/import/bulk', [AdminController::class, 'postAdminBulkImport']);
     Route::get('categories', [AdminController::class, 'getAllCategories']);
-    Route::post('category/add' , [AdminController::class , 'addCategory']);
+    Route::post('category/add', [AdminController::class, 'addCategory']);
     Route::get('levels/{category_id}', [AdminController::class, 'getCategoryData']);
     Route::get('lessons/{level_id}', [AdminController::class, 'getCategoryData']);
     Route::get('words/{lesson_id?}', [WordController::class, 'getWordsByLessonId']);
@@ -42,7 +42,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('meanings/add', [MeaningController::class, 'postAddMeaning']);
     Route::post('sentences/add', [SentenceController::class, 'postAddSentence']);
     Route::post('levels/delete', [LevelController::class, 'postDeleteLevel']);
-    Route::post('lessons/delete', [LessonController::class, 'postDeleteLesson']);
+    Route::post('lessons/delete', [LessonController::class, 'postDeleteLevel']);
     Route::post('words/delete', [WordController::class, 'postDeleteWord']);
     Route::post('word_data/delete', [WordDataController::class, 'postDeleteWordData']);
     Route::post('meanings/delete', [MeaningController::class, 'postDeleteMeaning']);
@@ -53,7 +53,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('export/sentences', [SentenceController::class, 'export']);
     Route::get('export/lessons', [LessonController::class, 'export']);
     Route::post('search/words', [WordController::class, 'search']);
-
-
+    Route::post('words/edit', [WordController::class, 'postEditWord']);
+    Route::post('category/edit', [AdminController::class, 'postEditCategory']);
+    Route::post('sentence/edit', [SentenceController::class, 'postEditSentence']);
+    Route::post('sentence/edit', [MeaningController::class, 'postEditMeaning']);
 });
 

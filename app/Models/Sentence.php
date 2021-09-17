@@ -16,4 +16,5 @@ class Sentence extends Model
     {
         return $this->belongsToMany(Meaning::class, 'meaning_sentences');
     }
+
 }

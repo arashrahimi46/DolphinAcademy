@@ -6,14 +6,15 @@ use App\Models\Category;
 use App\Models\Level;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use function Symfony\Component\Translation\t;
 
 class LevelController extends Controller
 {
     function getLevelsByCategoryId($id)
     {
         $levels = Category::where('parent_id', $id)->get();
-        $words = Category::where('id' , $id)->with('words')->first();
-        $result = ["categories" => $levels , "words" => []];
+        $words = Category::where('id', $id)->with('words')->first();
+        $result = ["categories" => $levels, "words" => []];
         if ($words) {
             $result["words"] = $words->words;
         }
@@ -32,8 +33,17 @@ class LevelController extends Controller
 
     function postDeleteLevel(Request $request)
     {
-       $id = $request->input('id');
-       Category::destroy($id);
-       return response()->json(['status' => 'ok', 'message' => 'level deleted successfully']);
+        $id = $request->input('id');
+        $this->deleteCategory($id);
+        return response()->json(['status' => 'ok', 'message' => 'level deleted successfully']);
+    }
+
+    function deleteCategory($id)
+    {
+        $category = Category::find($id);
+        $subs = Category::query()->where('parent_id', $id);
+        foreach ($subs as $sub) {
+            $this->deleteCategory($id);
+        }
     }
 }

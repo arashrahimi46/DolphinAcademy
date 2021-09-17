@@ -9,7 +9,7 @@ class Word extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['word', 'pronounce', 'type'];
+    protected $fillable = ['word', 'pronounce', 'type' , 'description'];
 
     public function meanings()
     {

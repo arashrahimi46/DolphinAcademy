@@ -74,6 +74,8 @@ function getDefaultPaymentMethod(r) {
     var wallet = 1;
     var card = 2;
     var credit = 3;
+    var direct_debit = 4;
+
     return card;
 } /*-----*/
 function getDynamicPinActive(a) {
@@ -93,7 +95,15 @@ function getCardEnabled(r) {
     return true;
 } /*-----*/
 function getDirectDebitEnabled(r) {
+    var e = JSON.parse(r);
+    var n = [221, 245];
     return true;
+    if(e.op == 209 && e.sop == 5){
+        return !0;
+    }
+    for (i = 0; i < n.length; i++)
+        if (n[i] == e.op) return !0;
+    return !1;
 } /*-----*/
 function getDirectDebitBalanceShowEnabled(r) {
     return true;
