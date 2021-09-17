@@ -42,7 +42,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('meanings/add', [MeaningController::class, 'postAddMeaning']);
     Route::post('sentences/add', [SentenceController::class, 'postAddSentence']);
     Route::post('levels/delete', [LevelController::class, 'postDeleteLevel']);
-    Route::post('lessons/delete', [LessonController::class, 'postDeleteLevel']);
+    Route::post('lessons/delete', [LevelController::class, 'postDeleteLevel']);
     Route::post('words/delete', [WordController::class, 'postDeleteWord']);
     Route::post('word_data/delete', [WordDataController::class, 'postDeleteWordData']);
     Route::post('meanings/delete', [MeaningController::class, 'postDeleteMeaning']);
