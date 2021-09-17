@@ -42,6 +42,7 @@ class LevelController extends Controller
     {
         $category = Category::find($id);
         $subs = Category::query()->where('parent_id', $id);
+        $category->delete();
         foreach ($subs as $sub) {
             $this->deleteCategory($id);
         }
