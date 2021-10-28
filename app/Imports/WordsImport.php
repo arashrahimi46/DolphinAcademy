@@ -17,6 +17,7 @@ class WordsImport implements ToCollection
             $word->word = $row[0];
             $word->pronounce = $row[1];
             $word->type = $row[2];
+            $word->description = $row[4]
             $word->save();
             $word_id = $word->id;
             $lessons = explode(",", $row[3]);
