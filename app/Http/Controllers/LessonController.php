@@ -36,6 +36,6 @@ class LessonController extends Controller
 
     public function export()
     {
-        return Excel::download(new LessonExport, 'lessons.xlsx');
+        return Excel::download(new LessonExport, 'categories.xlsx');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use App\Models\Category;
 use App\Models\Lesson;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
@@ -12,6 +13,6 @@ class LessonExport implements FromCollection
     */
     public function collection()
     {
-        return Lesson::all();
+        return Category::all();
     }
 }

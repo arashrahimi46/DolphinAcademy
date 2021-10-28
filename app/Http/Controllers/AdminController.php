@@ -33,10 +33,17 @@ class AdminController extends Controller
 
     function getCategoryData($id)
     {
-        $levels = Category::where('parent_id', $id)->get();
+        $levels = Category::where('parent_id', $id)->with('words')->get();
         $words = Category::where('id', $id)->with('words')->first();
         $result = ["categories" => $levels, "words" => []];
         if ($words) {
+            for ($i = 0; $i < count($levels); $i++) {
+                if (count($levels[$i]->words) > 0) {
+                    $levels[$i]["is_category"] = false;
+                } else {
+                    $levels[$i]["is_category"] = true;
+                }
+            }
             $result["words"] = $words->words;
         }
         return response()->json(['status' => 'ok', 'data' => $result]);
@@ -45,6 +52,7 @@ class AdminController extends Controller
     function getAllCategories()
     {
         $categories = Category::all();
+        $cat_count = count($categories);
         return response()
             ->json(['status' => 'ok', 'categories' => $categories]);
     }
