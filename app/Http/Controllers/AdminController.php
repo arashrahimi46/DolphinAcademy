@@ -53,6 +53,13 @@ class AdminController extends Controller
     {
         $categories = Category::all();
         $cat_count = count($categories);
+        for ($i = 0; $i < $cat_count; $i++) {
+            if (count($categories[$i]->words) > 0) {
+                $categories[$i]->is_category = false;
+            } else {
+                $categories[$i]->is_category = true;
+            }
+        }
         return response()
             ->json(['status' => 'ok', 'categories' => $categories]);
     }
