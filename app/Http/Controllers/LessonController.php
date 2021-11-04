@@ -23,6 +23,7 @@ class LessonController extends Controller
         $category->name = $request['name'];
         $category->icon = $request['icon'];
         $category->parent_id = $request['level_id'];
+        $category->is_category = true;
         $category->save();
         return response()->json(['status' => 'ok', 'message' => 'lesson created successfully']);
     }

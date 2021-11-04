@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('icon')->nullable();
             $table->string('color')->nullable();
             $table->string('mark')->nullable()->default('-');
+            $table->boolean('is_category')->default(true)->index();
             $table->unsignedBigInteger('parent_id')->index()->default(0);
             $table->timestamps();
         });
