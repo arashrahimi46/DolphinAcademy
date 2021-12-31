@@ -9,7 +9,7 @@ class IconController extends Controller
 {
     public function getAll()
     {
-        $baseurl = "http://dolphinacademy.ir/";
+        $baseurl = "http://dolphin.academy/";
         $icons = Icon::all();
         foreach ($icons as $icon) {
             $icon->url = $baseurl . $icon->url;
