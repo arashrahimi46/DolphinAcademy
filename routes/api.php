@@ -57,5 +57,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('category/edit', [AdminController::class, 'postEditCategory']);
     Route::post('sentence/edit', [SentenceController::class, 'postEditSentence']);
     Route::post('meaning/edit', [MeaningController::class, 'postEditMeaning']);
+    Route::post('sync/update', [AdminController::class, 'postUpdateSync']);
+    Route::post('sync/get', [AdminController::class, 'postGetSync']);
 });
 

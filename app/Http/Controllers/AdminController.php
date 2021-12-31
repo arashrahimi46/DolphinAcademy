@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BulkImportRequest;
 use App\Http\Requests\LoginRequest;
 use App\Models\Category;
+use App\Models\Sync;
 use App\Models\Word;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -121,5 +122,19 @@ class AdminController extends Controller
         return response()->json(['status' => 'ok', 'message' => 'category updated successfully']);
     }
 
+    function postUpdateSync(Request $request)
+    {
+        $sync = Sync::query()->find(1);
+        $version = $sync->version;
+        $new_version = $version++;
+        $sync->version = $new_version;
+        $sync->save();
+        return response()->json(['status' => 'ok', "message" => "sync updated successfully"]);
+    }
 
+    function postGetSync(Request $request)
+    {
+        $sync = Sync::query()->find(1);
+        return response()->json(['status' => 'ok', "date" => $sync]);
+    }
 }
