@@ -126,7 +126,7 @@ class AdminController extends Controller
     {
         $sync = Sync::query()->find(1);
         $version = $sync->version;
-        $new_version = $version++;
+        $new_version = $version + 1;
         $sync->version = $new_version;
         $sync->save();
         return response()->json(['status' => 'ok', "message" => "sync updated successfully"]);
